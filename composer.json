@@ -1,5 +1,5 @@
 {
-    "name": "adeboyed/laravel-ews-driver",
+    "name": "arvaipeti/laravel-ews-driver",
     "description": "Adds Exchange Web Services Mail Support to Laravel.",
     "keywords": ["laravel", "exchange", "ews"],
     "homepage": "https://github.com/adeboyed/laravel-ews-driver",
@@ -8,6 +8,10 @@
         {
             "name": "David Adeboye",
             "email": "david.adeboye@outlook.com"
+        },
+        {
+            "name": "Peter Arvai",
+            "email": "info@arvai.hu"
         }
     ],
     "prefer-stable": true,
@@ -24,7 +28,7 @@
         }
     },
     "support": {
-        "issues": "https://github.com/adeboyed/laravel-ews-driver/issues"
+        "issues": "https://github.com/arvaipeti/laravel-ews-driver/issues"
     },
     "extra": {
         "laravel": {
@@ -33,5 +37,5 @@
             ]
         }
     }
-    
+
 }
