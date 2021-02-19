@@ -28,11 +28,12 @@ class ExchangeTransport extends Transport
     protected $password;
     protected $messageDispositionType;
 
-    public function __construct($host, $username, $password, $messageDispositionType)
+    public function __construct($host, $username, $password, $version, $messageDispositionType)
     {
         $this->host = $host;
         $this->username = $username;
         $this->password = $password;
+        $this->version = $version;
         $this->messageDispositionType = $messageDispositionType;
     }
 
@@ -44,7 +45,8 @@ class ExchangeTransport extends Transport
         $client = new Client(
             $this->host,
             $this->username,
-            $this->password
+            $this->password,
+            $this->version
         );
 
         $request = new CreateItemType();

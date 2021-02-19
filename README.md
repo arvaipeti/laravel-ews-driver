@@ -80,6 +80,7 @@ MAIL_DRIVER=exchange
 MAIL_HOST=webmail.example.com
 MAIL_USERNAME=examplemail
 MAIL_PASSWORD=examplepassword
+MAIL_VERSION=Exchange2010
 MAIL_MESSAGE_DISPOSITION_TYPE=SaveOnly|SendAndSaveCopy|SendOnly
 ```
 
@@ -91,6 +92,7 @@ config/mail.php (In using lumen, this requires creating config directory and fil
             'host' => env('MAIL_HOST'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
+            'version' => env('MAIL_VERSION'),
             'messageDispositionType' => env('MAIL_MESSAGE_DISPOSITION_TYPE') // Optional, default: SendAndSaveCopy
         ],
     ],
