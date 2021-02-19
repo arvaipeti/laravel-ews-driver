@@ -25,9 +25,10 @@ class ExchangeAddedServiceProvider extends ServiceProvider
                 $username = $config['username'];
                 $password = $config['password'];
                 $version = $config['version'];
+                $from = $config['from'];
                 $messageDispositionType = $config['messageDispositionType'] || MessageDispositionType::SEND_AND_SAVE_COPY;
 
-                return new ExchangeTransport($host, $username, $password, $version, $messageDispositionType);
+                return new ExchangeTransport($host, $from, $username, $password, $version, $messageDispositionType);
             });
         });
     }
