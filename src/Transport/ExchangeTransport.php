@@ -26,12 +26,16 @@ class ExchangeTransport extends Transport
     protected $host;
     protected $username;
     protected $password;
+    protected $version;
+    protected $fromName;
+    protected $fromEmailAddress;
     protected $messageDispositionType;
 
-    public function __construct($host, $from, $username, $password, $version, $messageDispositionType)
+    public function __construct($host, $fromName, $fromEmailAddress, $username, $password, $version, $messageDispositionType)
     {
         $this->host = $host;
-        $this->from = $from;
+        $this->fromName = $fromName;
+        $this->fromEmailAddress = $fromEmailAddress;
         $this->username = $username;
         $this->password = $password;
         $this->version = $version;
@@ -63,7 +67,8 @@ class ExchangeTransport extends Transport
         // Set the sender.
         $ewsMessage->From = new SingleRecipientType();
         $ewsMessage->From->Mailbox = new EmailAddressType();
-        $ewsMessage->From->Mailbox->EmailAddress = $this->from;
+        $ewsMessage->From->Mailbox->EmailAddress = $this->fromEmailAddress;
+        $ewsMessage->From->Mailbox->Name = $this->fromName;
 
         // Set the recipient.
         foreach ($this->allContacts($simpleMessage) as $email => $name) {
